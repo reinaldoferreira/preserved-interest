@@ -1,7 +1,7 @@
 {
-  "name": "underwear",
+  "name": "pi",
   "version": "0.0.1",
-  "description": "",
+  "description": "My blog site build thingy",
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/karma/bin/karma start",
