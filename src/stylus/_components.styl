@@ -3,8 +3,9 @@
   margin-top -10px
 
 .logo
-  color: color.white
-  background-color: color.brand
+  // color: color.white
+  // background-color: color.brand
+  border: 2px solid color.brand
   display inline-block
   font-family $helvetica
   line-height 2
@@ -50,13 +51,21 @@
   border 0
   border-bottom: 1px solid black
   outline 0
+  font-size 16px !important
+  text-align right
+
+  &::placeholder
+    color: color.brand
+
 
   &:focus
     border-color: color.brand
 
 .form
   display inline-block
-  padding-left vr-block(.5)
+  height vr-block(1.1)
+  float right
+  margin-top 28px
 
 .content
   padding-bottom vr-block(1)

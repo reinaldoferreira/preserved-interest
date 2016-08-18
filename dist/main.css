@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fdfdf1;
+  background-color: #fff;
 }
 html {
   font-family: 'Georgia', 'serif';
@@ -12,12 +12,12 @@ html {
 }
 @media (min-width: 600px) {
   html {
-    font-size: calc( 18px + (24 - 18) * ((100vw - 600px) / (1140 - 600)) );
+    font-size: calc( 18px + (21 - 18) * ((100vw - 600px) / (1140 - 600)) );
   }
 }
 @media (min-width: 1140px) {
   html {
-    font-size: 24px;
+    font-size: 21px;
   }
 }
 h1,
@@ -117,7 +117,7 @@ h6:not([class]) {
   h4:not([class]),
   h5:not([class]),
   h6:not([class]) {
-    font-size: calc( 29.833207462337665px + (39.77760994978355 - 29.833207462337665) * ((100vw - 600px) / (1140 - 600)) );
+    font-size: calc( 29.833207462337665px + (34.80540870606061 - 29.833207462337665) * ((100vw - 600px) / (1140 - 600)) );
   }
 }
 @media (min-width: 1140px) {
@@ -127,10 +127,10 @@ h6:not([class]) {
   h4:not([class]),
   h5:not([class]),
   h6:not([class]) {
-    font-size: 39.77760994978355px;
+    font-size: 34.80540870606061px;
     margin-top: 1.319837970815179em;
     line-height: 1.583805564978215em;
-    margin-bottom: 0.283875848668242em;
+    margin-bottom: 0.286719885026128em;
   }
 }
 blockquote {
@@ -181,11 +181,11 @@ fieldset {
   border-width: 1px;
   border-style: solid;
   max-width: 100%;
-  margin-bottom: 1.822916666666667em;
+  margin-bottom: 1.833333333333333em;
 }
 @media (min-width: 1140px) {
   fieldset {
-    margin-bottom: 2.096354166666667em;
+    margin-bottom: 2.083333333333333em;
   }
 }
 fieldset button,
@@ -199,7 +199,7 @@ legend {
 label {
   display: block;
   padding-bottom: 0.21875em;
-  margin-bottom: -0.255208333333333em;
+  margin-bottom: -0.229166666666667em;
 }
 input[type="text"],
 input[type="email"],
@@ -209,14 +209,14 @@ textarea {
   max-width: 100%;
   padding: 0.4375em;
   font-size: 18px;
-  margin-bottom: 1.130208333333333em;
+  margin-bottom: 1.166666666666667em;
 }
 @media (min-width: 600px) {
   input[type="text"],
   input[type="email"],
   input[type="password"],
   textarea {
-    font-size: calc( 18px + (24 - 18) * ((100vw - 600px) / (1140 - 600)) );
+    font-size: calc( 18px + (21 - 18) * ((100vw - 600px) / (1140 - 600)) );
   }
 }
 @media (min-width: 1140px) {
@@ -224,8 +224,8 @@ textarea {
   input[type="email"],
   input[type="password"],
   textarea {
-    font-size: 24px;
-    margin-bottom: 0.501302083333333em;
+    font-size: 21px;
+    margin-bottom: 0.510416666666667em;
   }
 }
 input[type="submit"],
@@ -234,18 +234,18 @@ button {
   cursor: pointer;
   font-size: 18px;
   padding: 0.4375em 1.75em;
-  margin-bottom: 1.203125em;
+  margin-bottom: 1.1875em;
 }
 @media (min-width: 600px) {
   input[type="submit"],
   button {
-    font-size: calc( 18px + (24 - 18) * ((100vw - 600px) / (1140 - 600)) );
+    font-size: calc( 18px + (21 - 18) * ((100vw - 600px) / (1140 - 600)) );
   }
 }
 @media (min-width: 1140px) {
   input[type="submit"],
   button {
-    font-size: 24px;
+    font-size: 21px;
     margin-bottom: 1.3125em;
   }
 }
@@ -253,11 +253,11 @@ table {
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
-  margin-bottom: 2.114583333333333em;
+  margin-bottom: 2.166666666666667em;
 }
 @media (min-width: 1140px) {
   table {
-    margin-bottom: 2.005208333333333em;
+    margin-bottom: 2.041666666666667em;
   }
 }
 th {
@@ -297,12 +297,16 @@ ul[class] {
   padding-left: 0;
 }
 time {
-  font-size: 0.5rem;
+  font-size: 0.571428571428571rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #271101;
 }
 main {
   overflow: hidden;
+}
+*::-moz-selection {
+  color: #fff;
+  background-color: #ff8598;
 }
 *::selection {
   color: #fff;
@@ -311,7 +315,7 @@ main {
 .container {
   *zoom: 1;
   width: auto;
-  max-width: 60ex;
+  max-width: 65ex;
   float: none;
   display: block;
   margin-right: auto;
@@ -339,6 +343,9 @@ main {
 .list__item--inline:after {
   clear: both;
 }
+.list__item--inline + .list__item--inline {
+  margin-left: 0.5rem;
+}
 .f--left {
   float: left;
 }
@@ -357,8 +364,7 @@ main {
   margin-top: -10px;
 }
 .logo {
-  color: #fff;
-  background-color: #ff8598;
+  border: 2px solid #ff8598;
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 2;
@@ -385,12 +391,12 @@ main {
 }
 @media (min-width: 600px) {
   .post__title {
-    font-size: calc( 41.78158492851092px + (55.70877990468122 - 41.78158492851092) * ((100vw - 600px) / (1140 - 600)) );
+    font-size: calc( 41.78158492851092px + (48.745182416596066 - 41.78158492851092) * ((100vw - 600px) / (1140 - 600)) );
   }
 }
 @media (min-width: 1140px) {
   .post__title {
-    font-size: 55.70877990468122px;
+    font-size: 48.745182416596066px;
     margin-top: 0.942400822452556em;
     line-height: 1.130880986943067em;
     margin-bottom: 0.188480164490511em;
@@ -403,7 +409,7 @@ main {
 }
 .post__next__link:before,
 .post__next__link:after {
-  font-size: 0.625rem;
+  font-size: 0.714285714285714rem;
 }
 .post__date {
   display: inline-block;
@@ -415,17 +421,33 @@ main {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .input {
-  background-color: #fdfdf0;
+  background-color: #fefefe;
   border: 0;
   border-bottom: 1px solid #222;
   outline: 0;
+  font-size: 16px !important;
+  text-align: right;
+}
+.input::-webkit-input-placeholder {
+  color: #ff8598;
+}
+.input::-moz-placeholder {
+  color: #ff8598;
+}
+.input:-ms-input-placeholder {
+  color: #ff8598;
+}
+.input::placeholder {
+  color: #ff8598;
 }
 .input:focus {
   border-color: #ff8598;
 }
 .form {
   display: inline-block;
-  padding-left: 0.875em;
+  height: 1.925em;
+  float: right;
+  margin-top: 28px;
 }
 .content {
   padding-bottom: 1.75em;

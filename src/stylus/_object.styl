@@ -1,9 +1,12 @@
 .container
-  center(60ex, vr-block(.5))
+  center(65ex, vr-block(.5))
 
 .list__item--inline
   display inline-block
   cf()
+
+  + .list__item--inline
+    margin-left .5rem
 
 .f--left
   float left

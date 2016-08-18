@@ -11,6 +11,7 @@ axis = require('axis'),
 jeet = require('jeet'),
 rupture = require('rupture'),
 nib = require('nib'),
+autoprefixer = require('autoprefixer-stylus'),
 ExtractTextPlugin = require('extract-text-webpack-plugin'),
 moment = require('moment');
 
@@ -99,7 +100,7 @@ module.exports = {
     failOnError: true
   },
   stylus: {
-    use: [typographic(), axis(), jeet(), rupture(), nib()]
+    use: [typographic(), axis(), jeet(), rupture(), nib(), autoprefixer()]
   },
   plugins: contentGenerator.concat([new ExtractTextPlugin("[name].css")])
 };
