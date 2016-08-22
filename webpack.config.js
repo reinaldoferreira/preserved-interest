@@ -56,6 +56,7 @@ contentGenerator = contentGenerator.map(content => {
 
   return new HtmlWebpackPlugin({
     filename: `.${obj.id}`,
+    title: `${obj.attributes.title} | Preserved Interest`,
     template: `./src/${__TEMPLATE}/${obj.attributes.template}.${__TEMPLATE}`,
     content: obj,
     hash: true

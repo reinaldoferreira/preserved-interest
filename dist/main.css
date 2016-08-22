@@ -421,7 +421,6 @@ main {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .input {
-  background-color: #fefefe;
   border: 0;
   border-bottom: 1px solid #222;
   outline: 0;
@@ -444,6 +443,7 @@ main {
   border-color: #ff8598;
 }
 .form {
+  background-color: #fff;
   display: inline-block;
   height: 1.925em;
   float: right;

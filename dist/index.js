@@ -71,11 +71,11 @@
 	          emitType = target.getAttribute('data-target'),
 	          folder = path !== '/' ? path.substr(0, path.indexOf('/', 1)) : path;
 
-	      history.pushState(null, null, target.href);
-
 	      var result = store[folder].filter(function (el) {
 	        if (path === el.id) return el;
 	      });
+
+	      history.pushState(null, null, target.href);
 
 	      emitter.emit(emitType, result[0]);
 	    })();
