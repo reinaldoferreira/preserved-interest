@@ -2117,6 +2117,11 @@
 	  var htmlString = '\n    <article>\n      <a class="post__list__item" data-target="single" href="' + attr.href + '">\n        <time class="post__date" datetime="">' + attr.date + '</time>' + attr.title + '\n      </a>\n    </article>\n  ';
 	  return htmlString;
 	},
+	    stringFragment = function stringFragment(string, regex) {
+	  var exec = regex.exec(string),
+	      index = string.substring(exec.index, exec.index + 40);
+	  return index;
+	},
 	    store = store || {},
 	    onFilter = function onFilter(e) {
 	  var values = this.value.split(' ').filter(function (e) {
@@ -2124,11 +2129,19 @@
 	  }).join('|'),
 	      regex = new RegExp('(' + values + ')', 'ig'),
 	      filter = store['/posts'].filter(function (el) {
-	    return !!el.attributes.title.match(regex) || !!el.attributes.date.match(regex);
+	    return !!el.attributes.title.match(regex) || !!el.attributes.date.match(regex) || !!el.body.match(regex);
 	  }),
 	      result = filter.map(function (el) {
 	    var title = el.attributes.title.replace(regex, '<span class="hl">$1</span>'),
-	        date = el.attributes.date.replace(regex, '<span class="hl">$1</span>');
+	        date = el.attributes.date.replace(regex, '<span class="hl">$1</span>'),
+	        body = el.body.replace(regex, '<span class="hl">$1</span>');
+
+	    console.log(stringFragment(el.body, regex));
+
+	    // console.log(regex.exec(el.body).index);
+	    // console.log(el.body.substring(regex.exec(el.body).index - 10, regex.exec(el.body).index + 10));
+	    // 'a long test string'.substring(0, 2);
+	    // console.log(body);
 
 	    return htmlArticle({
 	      href: el.permalink,
