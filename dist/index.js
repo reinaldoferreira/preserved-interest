@@ -49,8 +49,7 @@
 	__webpack_require__(2);
 	__webpack_require__(19);
 	__webpack_require__(25);
-	__webpack_require__(26);
-	module.exports = __webpack_require__(27);
+	module.exports = __webpack_require__(26);
 
 
 /***/ },
@@ -518,12 +517,10 @@
 	'use strict';
 
 	var body = document.querySelector('body'),
-	    form = body.querySelector('#js-form'),
 	    list = body.querySelector('#js-list'),
-	    search = form.querySelector('#search'),
 	    single = body.querySelector('#js-single');
 
-	module.exports = { body: body, form: form, list: list, search: search, single: single };
+	module.exports = { body: body, list: list, single: single };
 
 /***/ },
 /* 19 */
@@ -2106,51 +2103,6 @@
 
 /***/ },
 /* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var emitter = __webpack_require__(2),
-	    dom = __webpack_require__(18);
-
-	var htmlArticle = function htmlArticle(attr) {
-	  var htmlString = '\n    <article>\n      <a class="post__list__item" data-target="single" href="' + attr.href + '">\n        <time class="post__date" datetime="">' + attr.date + '</time>' + attr.title + '\n      </a>\n    </article>\n  ';
-	  return htmlString;
-	},
-	    store = store || {},
-	    onFilter = function onFilter(e) {
-	  var values = this.value.split(' ').filter(function (e) {
-	    return e;
-	  }).join('|'),
-	      regex = new RegExp('(' + values + ')', 'ig'),
-	      filter = store['/posts'].filter(function (el) {
-	    return !!el.attributes.title.match(regex) || !!el.attributes.date.match(regex);
-	  }),
-	      result = filter.map(function (el) {
-	    var title = el.attributes.title.replace(regex, '<span class="hl">$1</span>'),
-	        date = el.attributes.date.replace(regex, '<span class="hl">$1</span>');
-
-	    return htmlArticle({
-	      href: el.permalink,
-	      title: title,
-	      date: date
-	    });
-	  }).join('');
-
-	  dom.list.innerHTML = result;
-
-	  e.preventDefault();
-	};
-
-	emitter.on('update', function (data) {
-	  store = data;
-	  Array.prototype.map.call(dom.form, function (el) {
-	    return el.addEventListener('input', onFilter, false);
-	  });
-	});
-
-/***/ },
-/* 26 */
 /***/ function(module, exports) {
 
 	// const page = require('page'),
@@ -2166,7 +2118,7 @@
 	"use strict";
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
