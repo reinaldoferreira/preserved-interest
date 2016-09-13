@@ -3,21 +3,39 @@ dom = require('./elements.js');
 
 let store = store || {},
 
-translateClickToAjax = function(e) {
+getSingleObject = ( path ) => {
+  let folder = path !== '/' ? path.substr(0, path.indexOf('/',1)) : path;
+
+  return store[folder].reduce((acc, val) => {
+    path = path === '/' ? '/index.html' : path;
+    if(path === val.id) acc = val;
+    return acc;
+  }, {});
+},
+
+setTitle = (siteName => {
+  siteName = siteName || 'Preserved Interest';
+  return title => {
+    document.title = `${title} | ${siteName}`;
+  }
+})(),
+
+goToPage = ( url, title ) => {
+  history.pushState(null, null, url);
+},
+
+translateClickToAjax = function( e ) {
   let target = e.target.tagName !== 'A' ? e.target.parentNode : e.target;
   if(target && !!target.getAttribute('data-target')) {
     let path = target.href.replace(location.origin,''),
     emitType = target.getAttribute('data-target'),
 
-    folder = path !== '/' ? path.substr(0, path.indexOf('/',1)) : path;
+    result = getSingleObject(path);
 
-    let result = store[folder].filter(el => {
-      if(path === el.id) return el;
-    });
+    goToPage( target.href );
+    setTitle( result.attributes.title );
 
-    history.pushState(null, null, target.href);
-
-    emitter.emit(emitType, result[0]);
+    emitter.emit(emitType, result);
   }
 
   e.preventDefault();
@@ -40,5 +58,5 @@ emitter
 })
 .on('update', data => {
   store = data;
-  dom.body.addEventListener('click', translateClickToAjax, true);
+  dom.body.addEventListener('click', translateClickToAjax, false);
 });
