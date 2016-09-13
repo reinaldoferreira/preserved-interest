@@ -89,7 +89,8 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        loader: ExtractTextPlugin.extract('css-loader!stylus-loader')
+        loader: ExtractTextPlugin.extract('css-loader!stylus-loader'),
+        exclude: [/"^_*.styl$"/],
       },
       { test: /\.pug$/, loader: 'pug' }
     ]
