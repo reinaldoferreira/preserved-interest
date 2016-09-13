@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-type" content="text/html;charset=utf-8"><title>Useful bash snippets | Preserved Interest</title><base href="http://localhost:3000/"><link href="./main.css?487847d850c9f412e37e" rel="stylesheet"></head><body class="js-single"><div class="container"><header class="header"><a class="logo" data-target="list" href="http://localhost:3000/">/</a></header><main class="content" role="main"><nav class="post__list" id="js-list" role="navigation"><article><a class="post__list__item" data-target="single" href="http://localhost:3000/posts/adding-code-highting-into-a-static-site.html"><time class="post__date" datetime="Sep 13, 2016">Sep 13, 2016</time><span>Adding code highlighting into a static site</span></a></article><article><a class="post__list__item" data-target="single" href="http://localhost:3000/posts/useful-bash-snippets.html"><time class="post__date" datetime="Sep 13, 2016">Sep 13, 2016</time><span>Useful bash snippets</span></a></article></nav></main><section id="js-single"><header><h1 class="post__title">Useful bash snippets</h1></header><div id="js-single__body"><p>I&#39;ve collected an assortment of different bash snippets that I use, but not often enough to always remember. And also some that I use all the time that might be unknown.</p>
+<p>Make a directory with dirName and cd into it straight away
+<code>mkdir dirName &amp;&amp; cd $_</code></p>
+<p>Make nested folders structure
+<code>mkdir -p folder/subFolder</code></p>
+<p>Resourcing bashsrc/profile/etc after updating
+<code>source ~/.profile</code></p>
+<p>Find files in dirName with fileName, can glob <code>*.pi</code>
+<code>find dirName -iname &#39;fileName&#39;</code></p>
+<p>Download one page - requires wget
+<code>wget -E -H -k -K -p http://www.examplesite.com</code></p>
+<p>Download the whole site - requires wget
+<code>wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains examplesite.com --no-parent http://www.examplesite.com</code></p>
+<p>Search through the history for string
+<code>history | grep -i string</code></p>
+<p>Empty am existing file
+<code>&gt; exisiting-file.txt</code></p>
+<p>Open stdin for free typing into a file
+<code>&gt; new-file.txt</code></p>
+</div></section><footer class="footer" role="contentinfo"><small class="list__item--inline">&copy; 2016 pew pew</small><div class="f--right"><small class="list__item--inline"><a href="#">Twitter</a></small><small class="list__item--inline"><a href="#">Github</a></small></div></footer></div><script type="text/javascript" src="./index.js?487847d850c9f412e37e"></script></body></html>

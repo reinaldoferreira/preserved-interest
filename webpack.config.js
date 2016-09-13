@@ -15,6 +15,14 @@ autoprefixer = require('autoprefixer-stylus'),
 ExtractTextPlugin = require('extract-text-webpack-plugin'),
 moment = require('moment');
 
+marked.setOptions({
+  highlight: function (code) {
+    return require('highlight.js').highlightAuto(code).value;
+  }
+});
+
+console.log(marked('```js\n console.log("hello"); \n```'));
+
 var store = {},
 __URL = 'http://localhost:3000/',
 __TEMPLATE = 'pug',
