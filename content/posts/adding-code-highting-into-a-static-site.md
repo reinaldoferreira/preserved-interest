@@ -5,7 +5,9 @@ template: post
 date: 1473795077
 ---
 
-`npm i -S marked highlight.js`
+```
+npm i -S marked highlight.js
+```
 
 ```
   let marked = require('marked');
