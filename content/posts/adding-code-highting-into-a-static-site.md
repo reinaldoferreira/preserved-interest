@@ -6,15 +6,15 @@ date: 1473795077
 ---
 
 ```
-npm i -S marked highlight.js
+$ npm i -S marked highlight.js
 ```
 
 ```
-  let marked = require('marked');
-  marked.setOptions({
-    highlight: function (code) {
-      return require('highlight.js').highlightAuto(code).value;
-    }
-  });
-  marked(codeString)
+let marked = require('marked');
+marked.setOptions({
+  highlight: function (code) {
+    return require('highlight.js').highlightAuto(code).value;
+  }
+});
+marked(codeString)
 ```

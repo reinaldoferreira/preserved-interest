@@ -466,12 +466,16 @@ main {
   color: #fff;
   background-color: #ff8598;
 }
-.hljs {
-  display: block;
-  overflow-x: auto;
+pre,
+code {
+  font-size: 90%;
+  font-family: Consolas, Inconsolas, "Courier New", monospace;
+}
+pre {
   padding: 0.5em;
   background: #23241f;
 }
+code,
 .hljs,
 .hljs-tag,
 .hljs-subst {

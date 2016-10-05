@@ -529,10 +529,19 @@
 	'use strict';
 
 	var body = document.querySelector('body'),
-	    list = body.querySelector('#js-list'),
-	    single = body.querySelector('#js-single');
+	    jsClasses = document.querySelectorAll('[class*=js--]'),
+	    results = Array.prototype.slice.call(jsClasses).reduce(function (acc, val) {
+	  var re = new RegExp('(?:^|[ ])js--([a-zA-Z]+)', 'ig'),
+	      results = re.exec(val.className);
 
-	module.exports = { body: body, list: list, single: single };
+	  acc[results[1]] = val;
+
+	  return acc;
+	}, {});
+
+	results['body'] = body;
+
+	module.exports = results;
 
 /***/ },
 /* 19 */
