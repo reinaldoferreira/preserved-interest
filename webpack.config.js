@@ -13,13 +13,23 @@ rupture = require('rupture'),
 nib = require('nib'),
 autoprefixer = require('autoprefixer-stylus'),
 ExtractTextPlugin = require('extract-text-webpack-plugin'),
-moment = require('moment');
+moment = require('moment'),
+renderer = new marked.Renderer();
 
 marked.setOptions({
-  highlight: function (code) {
-    return require('highlight.js').highlightAuto(code).value;
-  }
+  highlight: code => require('highlight.js').highlightAuto(code).value
 });
+
+renderer.image = function (href, title, text) {
+
+  fileName = href.replace(path.extname(href), '');
+
+  return `<picture>
+       <source type="image/webp" srcset="${fileName}-1024.webp">
+       <source srcset="${fileName}-1024.jpg">
+       <img src="${fileName}-1024.jpg" alt="${text}">
+    </picture>`;
+};
 
 var store = {},
 __URL = 'http://localhost:3000/',
@@ -40,7 +50,7 @@ let contentGenerator = glob.sync('./content/**/*.md').map(p => {
   permalink = url.resolve(__URL, fileName);
 
   content = fm(content);
-  content.body = marked(content.body);
+  content.body = marked(content.body, { renderer: renderer });
   content.permalink = permalink;
   content.slug = fileSlug;
   content.id = fileName;

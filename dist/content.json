@@ -22,11 +22,24 @@
                 "template": "post",
                 "date": "Sep 13, 2016"
             },
-            "body": "<pre><code>$ npm <span class=\"hljs-selector-tag\">i</span> -S marked highlight.js\n</code></pre><pre><code><span class=\"hljs-keyword\">let</span> marked = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'marked'</span>);\nmarked.setOptions({\n  highlight: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> (<span class=\"hljs-params\">code</span>) </span>{\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'highlight.js'</span>).highlightAuto(code).value;\n  }\n});\nmarked(codeString)\n</code></pre>",
+            "body": "<pre><code>$ npm <span class=\"hljs-selector-tag\">i</span> -S marked highlight.js\n</code></pre><pre><code><span class=\"hljs-keyword\">let</span> marked = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'marked'</span>);\nmarked.setOptions({\n  <span class=\"hljs-attr\">highlight</span>: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> (<span class=\"hljs-params\">code</span>) </span>{\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'highlight.js'</span>).highlightAuto(code).value;\n  }\n});\nmarked(codeString)\n</code></pre>",
             "frontmatter": "title: Adding code highlighting into a static site\r\ndescription: How to extend markdown editor on a static site to add in statically generated syntax highlighting\r\ntemplate: post\r\ndate: 1473795077",
             "permalink": "http://localhost:3000/posts/adding-code-highting-into-a-static-site.html",
             "slug": "adding-code-highting-into-a-static-site",
             "id": "/posts/adding-code-highting-into-a-static-site.html"
+        },
+        {
+            "attributes": {
+                "title": "Testing images",
+                "description": "Testing out image code",
+                "template": "post",
+                "date": "Oct 05, 2016"
+            },
+            "body": "<p><picture>\n       <source type=\"image/webp\" srcset=\"http://localhost:3000/images/cat-1024.webp\">\n       <source srcset=\"http://localhost:3000/images/cat-1024.jpg\">\n       <img src=\"http://localhost:3000/images/cat-1024.jpg\" alt=\"alt text\">\n    </picture></p>\n",
+            "frontmatter": "title: Testing images\r\ndescription: Testing out image code\r\ntemplate: post\r\ndate: 1475677091",
+            "permalink": "http://localhost:3000/posts/testing-images.html",
+            "slug": "testing-images",
+            "id": "/posts/testing-images.html"
         },
         {
             "attributes": {
