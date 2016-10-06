@@ -35,7 +35,7 @@
                 "template": "post",
                 "date": "Oct 05, 2016"
             },
-            "body": "<p><picture>\n       <source type=\"image/webp\" srcset=\"http://localhost:3000/images/cat-1024.webp\">\n       <source srcset=\"http://localhost:3000/images/cat-1024.jpg\">\n       <img src=\"http://localhost:3000/images/cat-1024.jpg\" alt=\"alt text\">\n    </picture></p>\n",
+            "body": "<p><picture>\n       <source type=\"image/webp\" srcset=\"http://localhost:3000/images/cat-1024.webp\">\n       <source type=\"image/jpg\" srcset=\"http://localhost:3000/images/cat-1024.jpg\">\n       <img src=\"http://localhost:3000/images/cat-1024.jpg\" alt=\"alt text\">\n    </picture></p>\n",
             "frontmatter": "title: Testing images\r\ndescription: Testing out image code\r\ntemplate: post\r\ndate: 1475677091",
             "permalink": "http://localhost:3000/posts/testing-images.html",
             "slug": "testing-images",

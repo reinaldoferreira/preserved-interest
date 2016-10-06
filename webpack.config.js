@@ -20,13 +20,12 @@ marked.setOptions({
   highlight: code => require('highlight.js').highlightAuto(code).value
 });
 
-renderer.image = function (href, title, text) {
-
-  fileName = href.replace(path.extname(href), '');
+renderer.image = (href, title, text) => {
+  let fileName = href.replace(path.extname(href), '');
 
   return `<picture>
        <source type="image/webp" srcset="${fileName}-1024.webp">
-       <source srcset="${fileName}-1024.jpg">
+       <source type="image/jpg" srcset="${fileName}-1024.jpg">
        <img src="${fileName}-1024.jpg" alt="${text}">
     </picture>`;
 };
