@@ -1,0 +1,9 @@
+{
+  "title": "Pi",
+  "posts": [
+    "posts/post-1/index.html",
+    "posts/post-2/index.html",
+    "posts/post-3/index.html",
+    "posts/post-4/index.html"
+  ]
+}

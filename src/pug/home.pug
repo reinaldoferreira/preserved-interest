@@ -1,19 +1,8 @@
-doctype html
-html
-  head
-    meta(http-equiv="Content-type", content="text/html;charset=utf-8")
-    title= htmlWebpackPlugin.options.title
-    base(href='http://localhost:3000/')
-    meta(name="viewport",content="width=device-width")
-  body.js-list
-    .container
-      include ./partials/header.pug
+extends ./layouts/index
 
-      include ./partials/loop.pug
-
-      section#js-single.js--single
-        header
-          h1.post__title
-        #js-single__body
-
-      include ./partials/footer.pug
+block content
+  ul.list
+    each el in data.posts
+      li: a(href=el).post: article
+        h1.post__el= data[ el ].attributes.title
+        time.post__el= data[ el ].attributes.date

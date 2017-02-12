@@ -1,0 +1,13 @@
+<html><head><title>Pi</title><link href="/main.css" rel="stylesheet"/></head><body><header class="header"><a class="no-underline to-root" href="/">/</a></header><main class="container"><h1 class="post__el">Post 4</h1><div class="body"><p>I know there are a lot of really great static site generators out there and I&#39;d recommend anyone reading this post uses one of them</p>
+<ul>
+<li><a href="http://jekyllrb.com/">Jekyll</a></li>
+<li><a href="http://gohugo.io/">Hugo</a></li>
+<li><a href="http://harpjs.com/">Harp</a></li>
+</ul>
+<p>But for me I decided to go with rolling my own static site generator solution, mostly because I&#39;m not smart enough to stop myself from reinventing to wheel and also because it&#39;s fun building things xD</p>
+<p>The main idea around the solution I built was that I wanted to be able to add assets easily to single posts. Basically the idea is that when I create a folder inside of content/posts all assets within that folder are available in the markdown file associated to it.</p>
+<p>So for example if I added an image to the content/posts/my-post/ folder with the name of my-image.jpg I can reference that image from within the markdown file with [my-image.jpg]. On building the solution with npm run build the image would be moved into an image folder in the dist folder.</p>
+<p>Something else that&#39;s different from other static site generators I&#39;ve seen is that I setup a config.json file that is added to the json file created from the markdown files which is passed to the views. I dont automatically generate any list structures. All the json out is doing is creating properties in an object with a key of the file path and a value of the files contents. Then by manually updating the config.json you can add lists and other global variables referencing content objects.</p>
+<p>If you need to add a large number of files to a list then this solution is a bit tedious, but I liked the flexibility of it.</p>
+<p>Also in the future I&#39;ll add a cli for generating markdown files and updating the configs accordingly.</p>
+</div></main><footer class="footer"><img class="is-inline img-round align-sub" src="https://avatars2.githubusercontent.com/u/4326139?v=3&amp;u=f7c4cc4ee1fdb62d32c7583c38cbfc91bf04350d&amp;s=400" width="25"/><small class="is-inline t-serif">Richard Cargill</small><small class="is-inline t-serif f-right">Copyright © 2017 Preserved Interest</small></footer><script src="/main.js"></script></body></html>

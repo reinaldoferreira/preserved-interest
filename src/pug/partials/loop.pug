@@ -1,7 +1,0 @@
-main.content(role="main")
-  nav#js-list.post__list(role="navigation")
-    each post in htmlWebpackPlugin.options.content['/posts']
-      article
-        a.post__list__item(data-target="single",href=post.permalink)
-          time.post__date(datetime=post.attributes.date)= post.attributes.date
-          span= post.attributes.title
