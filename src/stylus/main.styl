@@ -1,128 +1,127 @@
-  @import 'axis'
-  @import 'typographic'
-  @import 'rupture'
+@import 'axis'
+@import 'typographic'
+@import 'rupture'
 
-  color = {
-    brand: #FF8598,
-    black: #271101,
-    white: white,
-    cream: rgba(253,253,241,1)
-  }
+color = {
+  brand: #FF8598,
+  black: #271101,
+  white: white,
+  cream: rgba(253,253,241,1)
+}
 
-  $line-height-ratio   = 1.75
-  $heading-ratio       = $golden
-  $body-font           = $georgia
-  $body-font-weight    = 300
-  $body-color          = color.black
-  $heading-font        = $helvetica
-  $heading-font-weight = 500
-  $heading-color       = color.black
-  $min-font            = 18px
-  $max-font            = 24px
-  $min-width           = 600px
-  $max-width           = 1000px
-  $vertical-rhythm     = true
+$line-height-ratio   = 1.75
+$heading-ratio       = $golden
+$body-font           = $georgia
+$body-font-weight    = 300
+$body-color          = color.black
+$heading-font        = $helvetica
+$heading-font-weight = 500
+$heading-color       = color.black
+$min-font            = 18px
+$max-font            = 24px
+$min-width           = 600px
+$max-width           = 1000px
+$vertical-rhythm     = true
 
-  border-box-html()
-  fluid-media()
-  typographic()
+border-box-html()
+fluid-media()
+typographic()
+
+a
+  text-decoration none
+  color: color.brand
+
+html
+  background-color: color.black
+
+body
+  margin 0
+  background-color: color.cream
+
+*
+  outline 0
+
+blockquote
+  padding-left vr-block( .5 )
+  border-left: 3px solid color.brand
+
+.container
+  padding vr-block( .5 )
+  padding-top 0
+  max-width 70ex
+  transition padding 0.25s ease
+
+  +above( 768px )
+    padding-left vr-block( 1 )
+
+.header
+  @extend .container
+  padding-top vr-block( .5 )
+
+  +above( 768px )
+    padding-top vr-block( 1 )
+
+.no-underline
+  text-decoration none
+
+.to-root
+  font-size 200%
+
+  &:focus
+    text-decoration line-through
+
+.body
+  padding-left 0
 
   a
-    text-decoration none
-    color: color.brand
+    hover-underline()
+    &:focus
+      background-color: color.brand
+      color: color.white
 
-  html
-    background-color: color.black
+.list
+  list-style none
+  padding-left 0
 
-  body
-    margin 0
-    background-color: color.cream
+.post
+  display inline-block
+
+  &:focus .post__el
+    color: color.white
+    background-color: color.brand
+
+.post__el
+  line-height 1
+
+.footer
+  padding vr-block( .5 )
+  border-top: 2px solid tint( color.black, 10 )
+  background-color: color.black
+  transition padding 0.25s ease
+
+  +above( 768px )
+    padding-left vr-block( 1 )
 
   *
-    outline 0
-
-  blockquote
-    padding-left vr-block( .5 )
-    border-left: 3px solid color.brand
-
-  .container
-    padding vr-block( .5 )
-    padding-top 0
-    max-width 70ex
-    transition padding 0.25s ease
-
-    +above( 768px )
-      padding-left vr-block( 1 )
-
-  .header
-    @extend .container
-    padding-top vr-block( .5 )
-
-    +above( 768px )
-      padding-top vr-block( 1 )
-
-  .no-underline
-    text-decoration none
-
-  .to-root
-    font-size 200%
-
-    &:focus
-      text-decoration line-through
-
-  .body
-    padding-left 0
-
-    a
-      hover-underline()
-      &:focus
-        background-color: color.brand
-        color: color.white
-
-  .list
-    list-style none
-    padding-left 0
-
-  .post
-    display inline-block
-
-    &:focus .post__el
-      color: color.white
-      background-color: color.brand
-
-  .post__el
     line-height 1
+    color: color.white
 
-  .footer
-    padding vr-block( .5 )
-    border-top: 2px solid tint( color.black, 10 )
-    background-color: color.black
-    transition padding 0.25s ease
+.f-right
+  float right
 
-    +above( 768px )
-      padding-left vr-block( 1 )
+.t-serif
+  font-family: $helvetica
 
-    *
-      line-height 1
-      color: color.white
+.align-sub
+  vertical-align sub
 
-  .f-right
-    float right
+.img-round
+  border-radius 50%
 
-  .t-serif
-    font-family: $helvetica
+.is-inline
+  display inline-block
+  + .is-inline
+    margin-left vr-block( .5 )
 
-  .align-sub
-    vertical-align sub
-
-  .img-round
-    border-radius 50%
-
-  .is-inline
-    display inline-block
-
-    + .is-inline
-      margin-left vr-block( .5 )
-
-  .is-hidden
-    display none
+.is-hidden
+  display none
