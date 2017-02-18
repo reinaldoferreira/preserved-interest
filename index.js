@@ -6,6 +6,8 @@ const moment = require('moment')
 const path = require('path')
 const pug = require('pug')
 const argv = require('yargs').argv
+// const imagemin = require('imagemin')
+// const webp = require('imagemin-webp')
 
 const CONTENT_DIR = './content/'
 const DIST_DIR = './dist/'
@@ -25,9 +27,22 @@ const readContentFromPath = path => fs.readFileSync(path, 'utf8')
 // returns object of attributes
 const parseFrontmatter = content => fm(content)
 
+// If string is a relative link
+// return true
+// const isRelative = string => new RegExp('^(?:[a-z]+:)?//', 'i').text(string)
+
 // If content exists parse markdown
 // returns string of html
-const parseMarkdown = content => md(content)
+const parseMarkdown = content => {
+  let renderer = new md.Renderer()
+
+  renderer.image = (href, title, text) => {
+    // let relativeLink = isRelative(href)
+    return `<img src="${href}" title="${title}" alt="${text}" />`
+  }
+
+  return md(content, { renderer: renderer })
+}
 
 // If date is valid, parses date by pattern
 // returns string of date
