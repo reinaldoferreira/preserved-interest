@@ -27,7 +27,15 @@ const parseFrontmatter = content => fm(content)
 
 // If content exists parse markdown
 // returns string of html
-const parseMarkdown = content => md(content)
+const parseMarkdown = content => {
+  let renderer = new md.Renderer()
+
+  renderer.image = (href, title, text) => {
+    return `<img src="${href}" title="${title}" alt="${text}" />`
+  }
+
+  return md(content, { renderer: renderer })
+}
 
 // If date is valid, parses date by pattern
 // returns string of date
