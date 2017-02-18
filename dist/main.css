@@ -380,6 +380,25 @@ body {
   margin: 0;
   background-color: #fdfdf1;
 }
+code {
+  padding: 3px 4px;
+  color: #ff8598;
+  background-color: #f5f5f5;
+  border: 1px solid #e1e1e8;
+  border-radius: 3px;
+  font-family: Menlo, Monaco, 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
+}
+pre {
+  display: block;
+  padding: 7px;
+  background-color: #f5f5f5;
+  border: 1px solid #e1e1e8;
+  border-radius: 3px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: Menlo, Monaco, 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
+  line-height: 160%;
+}
 * {
   outline: 0;
 }
@@ -394,28 +413,50 @@ blockquote {
   max-width: 70ex;
   transition: padding 0.25s ease;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 48.0625em) {
   .container,
   .header {
-    padding-left: 1.75em;
+    padding-left: 3.5em;
   }
 }
 .header {
+  position: relative;
   padding-top: 0.875em;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 48.0625em) {
   .header {
     padding-top: 1.75em;
   }
 }
+.header + .container {
+  padding-top: 5.25em;
+}
 .no-underline {
   text-decoration: none;
 }
-.to-root {
-  font-size: 200%;
+.logo {
+  background-color: #fdfdf1;
+  position: absolute;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 400;
 }
-.to-root:focus {
+.site-title {
+  font-weight: 400;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+  color: #271101;
+  position: relative;
+}
+.site-title:before {
+  content: 'The ';
+}
+.site-title:focus,
+.site-title:hover {
+  color: #ff8598;
   text-decoration: line-through;
+}
+.site-title:focus .logo,
+.site-title:hover .logo {
+  color: #271101;
 }
 .body {
   padding-left: 0;
@@ -436,23 +477,35 @@ blockquote {
 }
 .post {
   display: inline-block;
+  position: relative;
 }
-.post:focus .post__el {
-  color: #fff;
-  background-color: #ff8598;
+.post:before {
+  content: '>';
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  transition: left 0.25s cubic-bezier(0.9, 0, 0.1, 1);
+}
+.post:focus:before,
+.post:hover:before {
+  left: -50px;
 }
 .post__el {
   line-height: 1;
+  color: #271101;
 }
 .footer {
-  padding: 0.875em;
-  border-top: 2px solid #3c281a;
+  padding: 0.4375em;
+  border-top: 1px solid #000;
   background-color: #271101;
   transition: padding 0.25s ease;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 48.0625em) {
   .footer {
-    padding-left: 1.75em;
+    padding-left: 3.5em;
+    padding-right: 3.5em;
   }
 }
 .footer * {

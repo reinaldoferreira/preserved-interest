@@ -1,5 +1,5 @@
 ---
-title: Post 3
+title: Beatae vitae dicta sunt explicabo
 template: post
 date: 1486249195
 ---
