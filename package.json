@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "jest",
+    "lint": "standard \"./src/js/*.js\" \"./index.js\"",
     "start": "node index.js -p",
     "dev": "nodemon --watch ./content/ -e md index.js",
     "build": "npm-run-all js:build css:build start",
@@ -41,6 +42,7 @@
     "rollup-plugin-uglify": "^1.0.1",
     "rollup-watch": "^3.2.2",
     "rupture": "^0.6.2",
+    "standard": "^8.6.0",
     "stylus": "^0.54.5",
     "typographic": "^3.0.0",
     "uncss": "^0.14.1",

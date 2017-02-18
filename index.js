@@ -135,16 +135,3 @@ const rmDirContents = globPattern => {
   })
 
 }()
-
-module.exports = {
-  getPaths,
-  readContentFromPath,
-  parseFrontmatter,
-  parseMarkdown,
-  parseUnixtime,
-  mergeObjects,
-  writeFile,
-  updateMdExtHtml,
-  ensureDirectoryExistence,
-  rmDirContents
-}
