@@ -6,7 +6,7 @@ color = {
   brand: #FF8598,
   black: #271101,
   white: white,
-  cream: rgba(253,253,241,1)
+  cream: lighten(rgba(253,253,241,1), 0.5)
 }
 
 $line-height-ratio   = 1.75
@@ -117,17 +117,22 @@ blockquote
   position relative
 
   &:before
-    content '>'
-    font-family $georgia
-    font-weight 700
+    background-color: transparent
+    bottom 0
+    content ''
+    height 75%
+    left -20px
     position absolute
-    top 50%
-    left -100%
-    transition left 0.25s $ease-in-out-swift
+    width 5px
+
   &:focus:before,
   &:hover:before
-    left -50px
+    animation: 1s animationFrames step-end infinite
 
+@keyframes animationFrames {
+  from, to { background-color: color.brand }
+  50% { background-color: transparent }
+}
 
 .post__el
   line-height 1
